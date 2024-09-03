@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped-columns table-hover table-sm">
+                <thead class="table-light text-left">
+                    <th scope="col">Empleo</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Ubicacion</th>
+                    <th scope="col">Sencillo</th>
+                    <th scope="col">Keyword</th>
+                    <th scope="col">Encontrado en</th>
+                    <th scope="col">Publicado en</th>
+                    <th scope="col">Aplicado</th>
+                    <th scope="col">Aplicado en</th>
+                </thead>
+                <tbody class="text-center">
+                    {% for job in jobs %}
+                        <tr>
+                            <td>{{ job[1] }}</td>
+                            <td>{{ job[2] }}</td>
+                            <td>{{ job[3] }}</td>
+                            <td>{{ job[4] }}</td>
+                            <td>{{ job[5] }}</td>
+                            <td>{{ job[7] }}</td>  
+                            <td>{{ job[8] }}</td>
+                            <td>
+                                <!-- hacer link con tolkit -->
+                                 <a href="{{ job[6] }}" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Postularte?">
+                                    {% if job[9] == 1 %}Si{% else %}No{% endif %}
+                                 </a>
+                                
+                            </td>
+                            <td>
+                                {% if not job[10] %}
+                                    ------
+                                {% else %}
+                                    {{ job[10] }}
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endblock %}
+        </div>
+    </div>
+    
