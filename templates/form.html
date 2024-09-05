@@ -1,0 +1,11 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+
+<h1>Subir archivo .pkl</h1>
+<form action="/upload_cookies" method="post" enctype="multipart/form-data">
+    <input type="file" name="cookies" accept=".pkl">
+    <input type="submit" value="Subir">
+</form>
+
+{% endblock content %}
