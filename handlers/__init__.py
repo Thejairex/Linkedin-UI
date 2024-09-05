@@ -1,1 +1,1 @@
-from app.db import DB, Jobs
+from handlers.db import DB, Jobs
