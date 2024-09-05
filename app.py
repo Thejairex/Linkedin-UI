@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, jsonify
-from asgi_lifespan import 
 
 from handlers.db import Jobs
 import requests
@@ -36,5 +35,3 @@ def upload_cookies():
     
 # if __name__ == '__main__':
 #     app.run(debug=False, host='0.0.0.0', port=10000)
-
-asgi_app = LifespanMiddleware(app)
