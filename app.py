@@ -24,7 +24,7 @@ def upload_cookies():
     file = request.files['cookies']
     files = {'cookies': (file.filename, file.stream, file.mimetype)}
     
-    response = requests.post('http://192.168.1.5:5000/cookies', files=files)
+    response = requests.post('https://linkedin-8eun.onrender.com/cookies', files=files)
     
     # Comprobar si la solicitud a FastAPI fue exitosa
     if response.status_code == 200:
@@ -34,5 +34,5 @@ def upload_cookies():
             return jsonify({"error": "Error al subir archivo a FastAPI", "status_code": response.status_code})
     
     
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=False, host='0.0.0.0', port=10000)
